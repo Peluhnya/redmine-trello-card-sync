@@ -2,5 +2,13 @@
 <section>
   <h3><%= l(:trello_card_sync_index_enable_bidirectional_sync_header) %></h3>
   <%= check_box(:project, :trello_enable_bidirectional_sync, {}, "1", "0")  %><span class="description"><%= l(:trello_card_sync_index_enable_bidirectional_sync_description) %></span>
+  <p><strong>NOTICE:</strong> Due to timeout limitation (10s) of ruby-trello, you may consider to register the webhook manually, please execute:</p>
+  <blockquote>curl -X POST -H "Content-Type: application/json" https://api.trello.com/1/tokens/<%= Setting.plugin_redmine_trello_card_sync['member_token'] %>/webhooks/ -d '{
+  "key": "<%= Setting.plugin_redmine_trello_card_sync['public_key'] %>",
+  "callbackURL": "<%= Setting.plugin_redmine_trello_card_sync['webhooks_url'] %>",
+  "idModel": "<%= @project.trello_board_id %>",
+  "description": "Manually added webhook for board <%= @project.trello_board_id %>"
+}'
+  </blockquote>
 </section>
 <% end %>
