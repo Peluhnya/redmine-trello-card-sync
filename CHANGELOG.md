@@ -1,3 +1,7 @@
+# 1.1.4
+
+* Add information for people to register the webhook manually
+
 # 1.1.3
 
 * Some minor fixes
