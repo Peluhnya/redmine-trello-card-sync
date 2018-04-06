@@ -1,3 +1,7 @@
+# 1.1.5
+
+* Bump to 1.1.5, no code changes but version number correction
+
 # 1.1.4
 
 * Add information for people to register the webhook manually
