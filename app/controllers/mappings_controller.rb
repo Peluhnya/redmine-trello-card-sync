@@ -4,8 +4,8 @@ require 'trello'
 class MappingsController < ApplicationController
   unloadable
 
-  before_filter :find_project_by_project_id, :authorize
-  before_filter :setup_trello_api
+  before_action :find_project_by_project_id, :authorize
+  before_action :setup_trello_api
 
   def index
     @board_lists = []
