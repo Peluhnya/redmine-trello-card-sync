@@ -5,7 +5,7 @@ require 'base64'
 class TrelloWebhooksController < ApplicationController
   unloadable
   skip_before_action :check_if_login_required
-  skip_before_action :authenticate_user
+  skip_before_action :authenticate
   skip_before_action :verify_authenticity_token
 
   def index
