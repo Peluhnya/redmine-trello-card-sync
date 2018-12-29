@@ -1,6 +1,6 @@
 require 'redmine'
 
-ActionDispatch::Reloader.to_prepare do
+ActionDispatch::Reloader.to_param do
   require 'concerns/trello_card_sync_project_extension'
   require 'redmine_trello_card_sync/hooks'
   require 'redmine_trello_card_sync/view_hooks'
